@@ -149,11 +149,59 @@
             details[open] summary::after {
                 content: " ▲";
             }
+
+            .pdf-viewer {
+                margin-top: 16px;
+                border-top: 1px solid #ccc;
+                padding-top: 12px;
+            }
+
+            .pdf-viewer summary {
+                display: inline-block;
+                padding: 8px 12px;
+                border: 1px solid #70777b;
+                border-radius: 6px;
+            }
+
+            .pdf-viewer__actions {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                margin: 12px 0;
+            }
+
+            .pdf-viewer__actions a {
+                padding: 6px 10px;
+                border: 1px solid #70777b;
+                border-radius: 6px;
+                text-decoration: none;
+            }
+
+            .pdf-viewer iframe {
+                display: block;
+                width: 100%;
+                height: min(75vh, 900px);
+                min-height: 600px;
+                border: 1px solid #ccc;
+                border-radius: 6px;
+                background: #fff;
+            }
+
+            @media only screen and (max-width: 850px) {
+                .homepage-content {
+                    margin-left: 5% !important;
+                    margin-right: 5% !important;
+                }
+
+                .pdf-viewer iframe {
+                    height: 70vh;
+                    min-height: 420px;
+                }
+            }
             </style>
 
             <div class="dropdown-container">
             <details>
-                <br>
                 <summary>“Towards Better Approximation Algorithms for α-EFX Allocations” Supervised by Aris Filos-Ratsikas</summary>
                 <ul>
                 <li><strong>Exploration of the “Top-N” Case:</strong> Provided strong evidence that the Top-N instance class — where agents value only their top few goods — cannot be handled organically by the existing 3PA algorithm (Amanatidis, Filos-Ratsikas, Sgouritsa, 2024), countering an existing conjecture.</li>
@@ -161,6 +209,65 @@
                 <li><strong>Use of Extremal Graph Theory (Group Champion Graphs):</strong> Suggested ways of analyzing EFX allocations using multigraphs and structural properties, inspired by work on EFX-with-charity. This adds a fresh analytical lens to the problem.</li>
                 <li><strong>Empirical experiments on 3PA:</strong> Tested 3PA's running time and step execution frequency. Evaluated allocation properties under different valuation distributions. Analyzed graph-theoretic properties of allocations, including structure of “enhanced envy graphs” and critical goods.</li>
                 </ul>
+
+                {{ $dissertationPDF := "pdfs/dissertation.pdf" | relURL }}
+                <details class="pdf-viewer">
+                    <summary>Read the dissertation</summary>
+                    <div class="pdf-viewer__actions">
+                        <a href="{{ $dissertationPDF }}" target="_blank" rel="noopener">Open PDF in a new tab</a>
+                        <a href="{{ $dissertationPDF }}" download>Download PDF</a>
+                    </div>
+                    <iframe
+                        src="{{ $dissertationPDF }}#view=FitH"
+                        title="Towards Better Approximation Algorithms for alpha-EFX Allocations dissertation"
+                        loading="lazy">
+                    </iframe>
+                    <p>If the viewer does not load, <a href="{{ $dissertationPDF }}" target="_blank" rel="noopener">open the PDF directly</a>.</p>
+                </details>
+            </details>
+            </div>
+
+            <div class="dropdown-container">
+            <details>
+                <summary>Algebraic Topology Project</summary>
+                <p>Written project on configuration spaces and preliminaries of low-dimensional topology and Braid groups for the Part C Algebraic Topology course (Scored 87).</p>
+
+                {{ $algebraicTopologyPDF := "pdfs/algebraic-topology-project.pdf" | relURL }}
+                <details class="pdf-viewer">
+                    <summary>Read the project</summary>
+                    <div class="pdf-viewer__actions">
+                        <a href="{{ $algebraicTopologyPDF }}" target="_blank" rel="noopener">Open PDF in a new tab</a>
+                        <a href="{{ $algebraicTopologyPDF }}" download>Download PDF</a>
+                    </div>
+                    <iframe
+                        src="{{ $algebraicTopologyPDF }}#view=FitH"
+                        title="Algebraic Topology Project"
+                        loading="lazy">
+                    </iframe>
+                    <p>If the viewer does not load, <a href="{{ $algebraicTopologyPDF }}" target="_blank" rel="noopener">open the PDF directly</a>.</p>
+                </details>
+            </details>
+            </div>
+
+            <div class="dropdown-container">
+            <details>
+                <summary>Getting Started with Boolean Function Complexity</summary>
+                <p>Notes on preliminaries of Boolean function complexity, circuits and graph complexity based on Boolean Function Complexity by Stasys Jukna.</p>
+
+                {{ $booleanComplexityPDF := "pdfs/boolean-function-complexity-jukna.pdf" | relURL }}
+                <details class="pdf-viewer">
+                    <summary>Read the notes</summary>
+                    <div class="pdf-viewer__actions">
+                        <a href="{{ $booleanComplexityPDF }}" target="_blank" rel="noopener">Open PDF in a new tab</a>
+                        <a href="{{ $booleanComplexityPDF }}" download>Download PDF</a>
+                    </div>
+                    <iframe
+                        src="{{ $booleanComplexityPDF }}#view=FitH"
+                        title="Getting Started with Boolean Function Complexity by Jukna"
+                        loading="lazy">
+                    </iframe>
+                    <p>If the viewer does not load, <a href="{{ $booleanComplexityPDF }}" target="_blank" rel="noopener">open the PDF directly</a>.</p>
+                </details>
             </details>
             </div>
 
